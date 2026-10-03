@@ -224,6 +224,7 @@ signals, exactly as it did before you added the SDK. A missing SDK session shoul
 
 ## Changelog
 
+- **0.1.2:** repository, issues and homepage links now point to `AbdlKabeer/prembly-tm-native`.
 - **0.1.1:** package renamed to `prembly-tm-native`; README rewritten.
 - **0.1.0:** first release.
 
