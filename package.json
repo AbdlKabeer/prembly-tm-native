@@ -1,6 +1,6 @@
 {
-  "name": "@prembly/tm-sdk-react-native",
-  "version": "0.1.0",
+  "name": "prembly-tm-native",
+  "version": "0.1.1",
   "description": "Prembly Transaction Monitoring SDK for React Native: collects device signals for fraud screening",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -32,7 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace @prembly/tm-sdk-react-native-example",
+    "example": "yarn workspace prembly-tm-native-example",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "typecheck": "tsc",
@@ -55,7 +55,8 @@
   },
   "homepage": "https://github.com/prembly/prembly-tm-sdk-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@eslint/compat": "^2.1.0",

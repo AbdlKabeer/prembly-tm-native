@@ -1,5 +1,5 @@
 {
-  "name": "@prembly/tm-sdk-react-native-example",
+  "name": "prembly-tm-native-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {

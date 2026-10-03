@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { PremblyTM } from '@prembly/tm-sdk-react-native';
+import { PremblyTM } from 'prembly-tm-native';
 
 // From the Android emulator the host machine is 10.0.2.2; the iOS simulator uses localhost.
 const DEFAULT_BASE_URL =
