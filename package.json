@@ -46,14 +46,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prembly/prembly-tm-sdk-react-native.git"
+    "url": "git+https://github.com/AbdlKabeer/prembly-tm-native.git"
   },
   "author": "Prembly <olanrewaju@prembly.com> (https://prembly.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prembly/prembly-tm-sdk-react-native/issues"
+    "url": "https://github.com/AbdlKabeer/prembly-tm-native/issues"
   },
-  "homepage": "https://github.com/prembly/prembly-tm-sdk-react-native#readme",
+  "homepage": "https://github.com/AbdlKabeer/prembly-tm-native#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
