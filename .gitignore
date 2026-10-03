@@ -84,3 +84,6 @@ android/generated
 
 # React Native Nitro Modules
 nitrogen/
+
+# local tarballs used to test the SDK in a host app
+.packs/
