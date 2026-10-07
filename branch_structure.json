@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "main",
+    "origin",
+    "test/wire-contract"
+  ],
+  "parent": {
+    "main": null,
+    "origin": "main",
+    "test/wire-contract": "main"
+  },
+  "order": [
+    "main",
+    "origin",
+    "test/wire-contract"
+  ]
+}
