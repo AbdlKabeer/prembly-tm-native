@@ -148,7 +148,7 @@ When `deviceSessionId` is `null`, `error` says why:
 | Section | Signals |
 |---|---|
 | `device` | Type, model, manufacturer, OS and version, app version and build, language, timezone |
-| `integrity` | Rooted or jailbroken, emulator, debugger attached, screen lock set; on Android also developer options and USB debugging |
+| `integrity` | Rooted or jailbroken, emulator, debugger attached, hooking framework detected (Frida, Xposed, LSPosed, Substrate), screen lock set; on Android also developer options and USB debugging |
 | `network` | Connection type, VPN active, proxy configured |
 | `scam_signals` | Screen shared or recorded; on Android, a known remote-access app's accessibility service enabled (and whether one is installed) |
 | `location` | Latitude, longitude, accuracy and whether it is mocked. **Only when you turn it on**, and the app already holds the permission |
@@ -216,7 +216,7 @@ signals, exactly as it did before you added the SDK. A missing SDK session shoul
 
 - Signals the app reports can be faked by an app that has been modified. Treat them as evidence for
   scoring and review; Prembly also works out signals of its own that the app cannot influence.
-- Root and jailbreak detection is best effort.
+- Root, jailbreak and hooking detection is best effort: `hooking_framework_detected: true` is strong evidence, `false` is not proof.
 - iOS cannot see which other apps are running, so `remote_access_app_running` is always `false` there.
 - Android cannot see running apps either. The SDK reports `remote_access_app_running` when a known
   remote-access app has an **enabled accessibility service**, which is what remote control needs.
