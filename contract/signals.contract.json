@@ -81,7 +81,19 @@
       "app_version",
       "app_build",
       "locale",
-      "timezone"
+      "timezone",
+      "platform_device_id",
+      "install_source",
+      "cpu_architecture",
+      "storage_free_percent",
+      "battery_level",
+      "carrier_name",
+      "carrier_country",
+      "carrier_mcc",
+      "carrier_mnc",
+      "wifi_ssid",
+      "wifi_bssid",
+      "apple_team_id"
     ],
     "integrity": [
       "is_rooted",
@@ -97,7 +109,8 @@
     ],
     "scam_signals": [
       "is_screen_shared_or_recorded",
-      "remote_access_app_running"
+      "remote_access_app_running",
+      "on_phone_call"
     ],
     "location": [
       "lat",

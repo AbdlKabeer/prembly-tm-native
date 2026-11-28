@@ -1,4 +1,5 @@
 #import "TMSignalCollector.h"
+#import "TMExtendedSignals.h"
 
 #import <CFNetwork/CFNetwork.h>
 #import <CoreLocation/CoreLocation.h>
@@ -72,7 +73,7 @@
     model = simulated;
   }
 #endif
-  return @{
+  NSMutableDictionary *section = [@{
     @"type" : device.userInterfaceIdiom == UIUserInterfaceIdiomPad ? @"tablet" : @"phone",
     @"model" : model,
     @"manufacturer" : @"Apple",
@@ -82,7 +83,11 @@
     @"app_build" : [bundle objectForInfoDictionaryKey:@"CFBundleVersion"] ?: @"",
     @"locale" : [self languageTag],
     @"timezone" : [NSTimeZone localTimeZone].name ?: @"",
-  };
+    // The ID iOS keeps for this app's vendor on this phone; it ties a business's apps together.
+    @"platform_device_id" : device.identifierForVendor.UUIDString ?: @"",
+  } mutableCopy];
+  [section addEntriesFromDictionary:[TMExtendedSignals deviceContext]];
+  return section;
 }
 
 /// The user's preferred language as a BCP 47 tag, for example "en-US". The locale identifier is
@@ -299,6 +304,7 @@
     @"is_screen_shared_or_recorded" : @([self isScreenCaptured]),
     // iOS does not let an app see which other apps are running.
     @"remote_access_app_running" : @NO,
+    @"on_phone_call" : [TMExtendedSignals onPhoneCall] ?: @NO,
   };
 }
 
