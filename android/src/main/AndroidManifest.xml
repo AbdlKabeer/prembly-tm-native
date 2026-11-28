@@ -3,6 +3,12 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
   <!--
+    Normal permission (no prompt): lets the SDK read the wifi name and access point, and only when
+    the app already holds location permission. The SDK never asks for it.
+  -->
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+  <!--
     Package visibility (Android 11+) for the packages the SDK checks by name. This lists specific
     packages only; the SDK does not use QUERY_ALL_PACKAGES. The list is reviewed by the security
     team before release: see RemoteAccessApps.kt and the README.
@@ -21,5 +27,10 @@
     <package android:name="com.carriez.flutter_hbb" />
     <package android:name="com.sand.airdroid" />
     <package android:name="com.sand.airmirror" />
+    <package android:name="com.lexa.fakegps" />
+    <package android:name="com.incorporateapps.fakegps.fre" />
+    <package android:name="ru.gavrikov.mocklocations" />
+    <package android:name="com.theappninjas.gpsjoystick" />
+    <package android:name="com.truedevelopersstudio.automatictap.autoclicker" />
   </queries>
 </manifest>

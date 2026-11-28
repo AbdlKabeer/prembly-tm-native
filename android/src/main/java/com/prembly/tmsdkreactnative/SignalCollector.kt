@@ -26,6 +26,7 @@ import org.json.JSONObject
  * holds it.
  */
 internal class SignalCollector(private val context: Context) {
+  private val extended = ExtendedSignals(context)
 
   fun appInfo(): JSONObject {
     val info = packageInfo()
@@ -64,6 +65,12 @@ internal class SignalCollector(private val context: Context) {
       .put("app_build", info?.let { buildNumber(it) } ?: "")
       .put("locale", Locale.getDefault().toLanguageTag())
       .put("timezone", TimeZone.getDefault().id)
+      .also { merge(it, extended.deviceContext()) }
+  }
+
+  /** Copies every field of [from] into [into]. */
+  private fun merge(into: JSONObject, from: JSONObject) {
+    from.keys().forEach { into.put(it, from.get(it)) }
   }
 
   private fun packageInfo() =
@@ -86,6 +93,7 @@ internal class SignalCollector(private val context: Context) {
       .put("developer_options_enabled", globalSetting(Settings.Global.DEVELOPMENT_SETTINGS_ENABLED))
       .put("usb_debugging_enabled", globalSetting(Settings.Global.ADB_ENABLED))
       .put("is_device_secure", keyguard?.isDeviceSecure ?: true)
+      .also { merge(it, extended.integrityFlags()) }
   }
 
   private fun globalSetting(name: String): Boolean =
@@ -178,6 +186,7 @@ internal class SignalCollector(private val context: Context) {
       // the known packages is the closest reliable sign that it is active now.
       .put("remote_access_app_running", serviceInRemoteAccessApp)
       .put("remote_access_app_installed", RemoteAccessApps.PACKAGES.any { isInstalled(it) })
+      .also { section -> extended.onPhoneCall()?.let { section.put("on_phone_call", it) } }
   }
 
   /** Best effort: looks for a mirrored, cast or presentation display next to the main one. */

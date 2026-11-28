@@ -1,18 +1,122 @@
 {
   "note": "The signal keys each native collector sends today. Used by src/__tests__/wire-contract.test.ts so a key cannot be added, renamed or dropped without this file (and the backend) changing with it.",
-  "sections": ["device", "integrity", "network", "scam_signals", "location"],
+  "sections": [
+    "device",
+    "integrity",
+    "network",
+    "scam_signals",
+    "location"
+  ],
   "android": {
-    "device": ["type", "model", "manufacturer", "os_name", "os_version", "app_version", "app_build", "locale", "timezone"],
-    "integrity": ["is_rooted", "is_emulator", "is_debugger_attached", "hooking_framework_detected", "developer_options_enabled", "usb_debugging_enabled", "is_device_secure"],
-    "network": ["type", "is_vpn_active", "is_proxy_configured"],
-    "scam_signals": ["is_screen_shared_or_recorded", "remote_access_app_running", "remote_access_app_installed"],
-    "location": ["lat", "lng", "accuracy_m", "is_mock"]
+    "device": [
+      "type",
+      "model",
+      "manufacturer",
+      "os_name",
+      "os_version",
+      "app_version",
+      "app_build",
+      "locale",
+      "timezone",
+      "platform_device_id",
+      "install_source",
+      "cpu_architecture",
+      "storage_free_percent",
+      "battery_level",
+      "battery_health",
+      "battery_technology",
+      "battery_temperature_c",
+      "battery_voltage_mv",
+      "carrier_name",
+      "carrier_country",
+      "carrier_mcc",
+      "carrier_mnc",
+      "wifi_ssid",
+      "wifi_bssid",
+      "signing_cert_sha256"
+    ],
+    "integrity": [
+      "is_rooted",
+      "is_emulator",
+      "is_debugger_attached",
+      "hooking_framework_detected",
+      "developer_options_enabled",
+      "usb_debugging_enabled",
+      "is_device_secure",
+      "clone_app_detected",
+      "device_masked",
+      "virtual_os",
+      "auto_clicker_enabled",
+      "secondary_user",
+      "vpn_spoofer_app_running",
+      "gps_spoofer_app_running",
+      "sdk_connection_intercepted",
+      "usb_debugging_in_progress"
+    ],
+    "network": [
+      "type",
+      "is_vpn_active",
+      "is_proxy_configured"
+    ],
+    "scam_signals": [
+      "is_screen_shared_or_recorded",
+      "remote_access_app_running",
+      "remote_access_app_installed",
+      "on_phone_call"
+    ],
+    "location": [
+      "lat",
+      "lng",
+      "accuracy_m",
+      "is_mock"
+    ]
   },
   "ios": {
-    "device": ["type", "model", "manufacturer", "os_name", "os_version", "app_version", "app_build", "locale", "timezone"],
-    "integrity": ["is_rooted", "is_emulator", "is_debugger_attached", "hooking_framework_detected", "is_device_secure"],
-    "network": ["type", "is_vpn_active", "is_proxy_configured"],
-    "scam_signals": ["is_screen_shared_or_recorded", "remote_access_app_running"],
-    "location": ["lat", "lng", "accuracy_m", "is_mock"]
+    "device": [
+      "type",
+      "model",
+      "manufacturer",
+      "os_name",
+      "os_version",
+      "app_version",
+      "app_build",
+      "locale",
+      "timezone",
+      "platform_device_id",
+      "install_source",
+      "cpu_architecture",
+      "storage_free_percent",
+      "battery_level",
+      "carrier_name",
+      "carrier_country",
+      "carrier_mcc",
+      "carrier_mnc",
+      "wifi_ssid",
+      "wifi_bssid",
+      "apple_team_id"
+    ],
+    "integrity": [
+      "is_rooted",
+      "is_emulator",
+      "is_debugger_attached",
+      "hooking_framework_detected",
+      "is_device_secure"
+    ],
+    "network": [
+      "type",
+      "is_vpn_active",
+      "is_proxy_configured"
+    ],
+    "scam_signals": [
+      "is_screen_shared_or_recorded",
+      "remote_access_app_running",
+      "on_phone_call"
+    ],
+    "location": [
+      "lat",
+      "lng",
+      "accuracy_m",
+      "is_mock"
+    ]
   }
 }
